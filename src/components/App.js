@@ -17,17 +17,13 @@ const App = () => {
               <Link to="/">Register</Link>
             </li>
             <li>
-              <Link to='/login'>Login</Link>
+              <Link to="/login">Login</Link>
             </li>
-            <li>          
-            {
-              isLoggedIn && (
-                <li>
-                <Link to='/store'>Store</Link>
-                </li>
-              )
-            }
-            </li>
+            {isLoggedIn && (
+              <li>
+                <Link to="/store">Store</Link>
+              </li>
+            )}
           </ul>
         </nav>
 
@@ -36,16 +32,19 @@ const App = () => {
             <Register />
           </Route>
           <Route path="/login">
-            <Login  setIsLoggedIn={setIsLoggedIn}/>
+            <Login setIsLoggedIn={setIsLoggedIn} />
           </Route>
           <Route path="/store">
-            {isLoggedIn?
-            <Store  setIsLoggedIn={setIsLoggedIn}/>:<Redirect to='/login'/>}
+            {isLoggedIn ? (
+              <Store setIsLoggedIn={setIsLoggedIn} />
+            ) : (
+              <Redirect to="/login" />
+            )}
           </Route>
         </Switch>
       </BrowserRouter>
     </div>
-  )
-}
+  );
+};
 
 export default App;
