@@ -20,7 +20,7 @@ const Login = () => {
         }
         const user=JSON.parse(localStorage.getItem('user'));
         if(user && user.email ==email && user.password==password){
-            props.setIsLoggedIn(true)
+            props.setIsLogIn(true)
             setError(false)
             setEmail('')
             setPassword('')
