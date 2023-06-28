@@ -19,9 +19,7 @@ const App = () => {
             <li>
               <Link to='/login'>Login</Link>
             </li>
-            <li>
-                <Link>Store</Link>
-            </li>
+            <li>          
             {
               isLoggedIn && (
                 <li>
@@ -29,9 +27,10 @@ const App = () => {
                 </li>
               )
             }
+            </li>
           </ul>
         </nav>
-        
+
         <Switch>
           <Route exact path="/">
             <Register />
